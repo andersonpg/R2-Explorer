@@ -90,10 +90,9 @@ import { R2Explorer } from "r2-explorer";
 
 export default R2Explorer(${R2EXPLORER_CONFIG});
 `);
-fs.writeFileSync(
-	`${baseDir}/src/index.ts`,
-	`
+const indexTsContent = `
 import { R2Explorer } from "r2-explorer";
+
 export default R2Explorer({
   readonly: false,
   basicAuth: [
@@ -102,6 +101,8 @@ export default R2Explorer({
     { username: 'liv', password: 'Route66Recharged1$' }
   ]
 });
-`; // <--- Make sure this backtick and semicolon are here!
+`;
 
-fs.writeFileSync('./src/index.ts', indexTsContent); // <--- Make sure this line is closed!
+fs.writeFileSync(`${baseDir}/src/index.ts`, indexTsContent);
+
+console.log("Deployment configuration prepared successfully.");
