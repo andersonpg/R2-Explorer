@@ -94,7 +94,11 @@ fs.writeFileSync(
 	`${baseDir}/src/index.ts`,
 	`
 import { R2Explorer } from "r2-explorer";
-
-export default R2Explorer(${R2EXPLORER_CONFIG});
-`,
-);
+export default R2Explorer({
+  readonly: false,
+  basicAuth: [
+    { username: 'patrick', password: 'Route66Recharged1$' },
+    { username: 'ea', password: 'Route66Recharged' },
+    { username: 'liv', password: 'Route66Recharged1$' }
+  ]
+});
