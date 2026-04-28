@@ -102,3 +102,6 @@ export default R2Explorer({
     { username: 'liv', password: 'Route66Recharged1$' }
   ]
 });
+`; // <--- Make sure this backtick and semicolon are here!
+
+fs.writeFileSync('./src/index.ts', indexTsContent); // <--- Make sure this line is closed!
